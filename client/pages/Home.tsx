@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import {
   TrendingUp,
   TrendingDown,
-  Clock,
+  Newspaper,
   Swords,
   Shield,
   Grip,
   ChevronDown,
 } from "lucide-react";
+import { NEWS_ARTICLES } from "@shared/news";
 
 type Discipline = "MMA" | "Pankration" | "Grappling";
 
@@ -303,10 +304,9 @@ export default function Home() {
               <Link
                 key={athlete.id}
                 to={`/athlete/${athlete.id}`}
-                className="group relative glass-card p-6 sm:p-8 cursor-pointer"
+                className="group relative block cursor-pointer overflow-hidden rounded-[var(--radius)] glass-card p-6 pt-16 sm:p-8 sm:pt-8"
               >
-                {/* Rank Badge */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-electric-blue text-black rounded-full flex items-center justify-center font-bold text-lg">
+                <div className="absolute right-3 top-3 flex h-10 w-10 items-center justify-center rounded-full bg-electric-blue text-sm font-bold text-black sm:right-4 sm:top-4 sm:h-12 sm:w-12 sm:text-lg">
                   {athlete.rank}
                 </div>
 
@@ -369,30 +369,42 @@ export default function Home() {
 
       {/* News Preview Section */}
       <section className="py-16 px-4 sm:py-24 sm:px-6 md:py-[120px] bg-black border-t separator-line">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12">
-            Latest Updates
-          </h2>
+        <div className="max-w-5xl mx-auto w-full min-w-0">
+          <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+              Latest Updates
+            </h2>
+            <Link
+              to="/news"
+              className="text-sm font-semibold text-electric-blue hover:underline"
+            >
+              Barcha yangiliklar →
+            </Link>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[1, 2, 3].map((item) => (
-              <div
-                key={item}
-                className="glass-card p-6 group cursor-pointer"
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8">
+            {NEWS_ARTICLES.slice(0, 3).map((article) => (
+              <Link
+                key={article.id}
+                to={`/news/${article.id}`}
+                className="group flex min-w-0 flex-col overflow-hidden rounded-[var(--radius)] glass-card p-0 transition-colors hover:border-electric-blue/40"
               >
-                <div className="h-40 bg-gradient-to-br from-electric-blue via-gray-900 to-black mb-4 flex items-center justify-center">
-                  <Clock className="w-12 h-12 text-electric-blue opacity-30" />
+                <div className="flex h-36 items-center justify-center bg-gradient-to-br from-electric-blue/40 via-gray-900 to-black sm:h-40">
+                  <Newspaper className="h-12 w-12 text-electric-blue/50 sm:h-14 sm:w-14" strokeWidth={1.25} />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">
-                  Championship Update {item}
-                </h3>
-                <p className="text-sm text-gray-400 mb-4">
-                  Latest news from the Uzbekistan MMA Association...
-                </p>
-                <div className="flex items-center text-electric-blue text-sm font-semibold group-hover:translate-x-2 transition-transform">
-                  Read More →
+                <div className="p-5 sm:p-6">
+                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-wider text-electric-blue/90">
+                    {article.category}
+                  </p>
+                  <h3 className="mb-2 line-clamp-2 text-base font-semibold text-white group-hover:text-electric-blue sm:text-lg">
+                    {article.title}
+                  </h3>
+                  <p className="mb-4 line-clamp-3 text-sm text-gray-400">{article.excerpt}</p>
+                  <span className="inline-flex items-center text-sm font-semibold text-electric-blue transition-transform group-hover:translate-x-1">
+                    Read more →
+                  </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

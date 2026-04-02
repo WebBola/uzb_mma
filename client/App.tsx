@@ -14,6 +14,7 @@ import Athletes from "./pages/Athletes";
 import AthleteProfile from "./pages/AthletProfile";
 import Register from "./pages/Register";
 import News from "./pages/News";
+import NewsArticle from "./pages/NewsArticle";
 import About from "./pages/About";
 import Media from "./pages/Media";
 import NotFound from "./pages/NotFound";
@@ -37,6 +38,7 @@ const App = () => (
               <Route path="/athlete/:id" element={<AthleteProfile />} />
               <Route path="/register" element={<Register />} />
               <Route path="/news" element={<News />} />
+              <Route path="/news/:id" element={<NewsArticle />} />
               <Route path="/media" element={<Media />} />
               <Route path="/about" element={<About />} />
               <Route path="*" element={<NotFound />} />

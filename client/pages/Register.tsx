@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronRight, Check } from "lucide-react";
+import { ChevronRight, Check, Swords, Building2 } from "lucide-react";
 
 type RegistrationType = "athlete" | "club" | null;
 type AthleteStep = 1 | 2 | 3;
@@ -102,8 +102,8 @@ export default function Register() {
                 onClick={() => setRegistrationType("athlete")}
                 className="glass p-8 border border-[#1a1a1a] hover:border-electric-blue transition-all group text-left"
               >
-                <div className="text-4xl font-bold text-electric-blue mb-4">
-                  👊
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl border border-electric-blue/30 bg-electric-blue/10 text-electric-blue">
+                  <Swords className="h-7 w-7" strokeWidth={1.75} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-electric-blue transition-colors">
                   Athlete Registration
@@ -122,8 +122,8 @@ export default function Register() {
                 onClick={() => setRegistrationType("club")}
                 className="glass p-8 border border-[#1a1a1a] hover:border-electric-blue transition-all group text-left"
               >
-                <div className="text-4xl font-bold text-electric-blue mb-4">
-                  🏢
+                <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl border border-electric-blue/30 bg-electric-blue/10 text-electric-blue">
+                  <Building2 className="h-7 w-7" strokeWidth={1.75} />
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-electric-blue transition-colors">
                   Club Registration
