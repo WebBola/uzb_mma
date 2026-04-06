@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Home",
+    "calendar": "Fight Calendar",
+    "rankings": "Rankings",
+    "athletes": "Athletes",
+    "news": "News",
+    "media": "Media",
+    "about": "About"
+  },
+  "register": "Member Portal",
+  "menu": "Open menu",
+  "home": {
+    "title": "Uzbekistan MMA Federation",
+    "subtitle": "Pankration. Grappling. Combat Excellence.",
+    "nextEvent": "Next Event",
+    "championshipSeries": "Championship Series 2024",
+    "tashkentArena": "Tashkent Grand Arena",
+    "viewEvents": "View All Events",
+    "getTickets": "Get Tickets",
+    "topKings": "Top P4P Kings",
+    "eliteAthletes": "Elite athletes dominating the rankings",
+    "mma": "MMA",
+    "pankration": "Pankration",
+    "grappling": "Grappling",
+    "record": "Record",
+    "trendingUp": "Trending Up",
+    "trendingDown": "Trending Down",
+    "viewProfile": "View Profile",
+    "fullRankings": "View Full Rankings",
+    "latestUpdates": "Latest Updates",
+    "allNews": "All news",
+    "readMore": "Read more",
+    "readyToJoin": "Ready to Join?",
+    "registerText": "Register as an athlete, club, or official to participate in the Uzbekistan MMA ecosystem",
+    "startRegistration": "Start Registration"
+  }
+}

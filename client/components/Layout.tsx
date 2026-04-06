@@ -1,7 +1,15 @@
 import { Link, useLocation } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { useState } from "react";
+import { Menu, Languages } from "lucide-react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { cn } from "@/lib/utils";
 
 interface LayoutProps {
@@ -20,7 +28,22 @@ const navItems = [
 
 export default function Layout({ children }: LayoutProps) {
   const location = useLocation();
+  const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navItems = [
+    { path: "/", label: t('nav.home') },
+    { path: "/calendar", label: t('nav.calendar') },
+    { path: "/rankings", label: t('nav.rankings') },
+    { path: "/athletes", label: t('nav.athletes') },
+    { path: "/news", label: t('nav.news') },
+    { path: "/media", label: t('nav.media') },
+    { path: "/about", label: t('nav.about') },
+  ] as const;
+
+  const handleLanguageChange = (lang: string) => {
+    i18n.changeLanguage(lang);
+  };
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -56,11 +79,29 @@ export default function Layout({ children }: LayoutProps) {
           </div>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <Select value={i18n.language} onValueChange={handleLanguageChange}>
+              <SelectTrigger className="w-auto h-8 px-2 py-1 text-white text-[10px] uppercase tracking-wide bg-white/5 border-white/15 hover:bg-white/10 focus:ring-0 focus:ring-offset-0">
+                <Languages className="h-3 w-3 mr-1" />
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent className="bg-slate-800 border-slate-600">
+                <SelectItem value="uz" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                  UZ
+                </SelectItem>
+                <SelectItem value="ru" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                  RU
+                </SelectItem>
+                <SelectItem value="en" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                  EN
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
             <Link
               to="/register"
               className="hidden sm:inline-flex blurry-amber-btn px-3 sm:px-4 xl:px-5 py-2 sm:py-2.5 text-white text-[10px] sm:text-xs xl:text-sm uppercase tracking-wide xl:tracking-wider transition-all duration-300 shrink-0"
             >
-              Member Portal
+              {t('register')}
             </Link>
 
             <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -68,7 +109,7 @@ export default function Layout({ children }: LayoutProps) {
                 <button
                   type="button"
                   className="min-[1100px]:hidden inline-flex items-center justify-center rounded-md border border-white/15 bg-white/5 p-2.5 text-white hover:bg-white/10 transition-colors"
-                  aria-label="Open menu"
+                  aria-label={t('menu')}
                 >
                   <Menu className="h-5 w-5" />
                 </button>
@@ -78,6 +119,24 @@ export default function Layout({ children }: LayoutProps) {
                 className="frost-nav border-l border-white/10 w-[min(100vw,20rem)] bg-[#0a0a0b]/92"
               >
                 <nav className="flex flex-col gap-1 mt-10">
+                  <div className="mb-4">
+                    <Select value={i18n.language} onValueChange={handleLanguageChange}>
+                      <SelectTrigger className="w-full bg-white/5 border-white/15 text-white">
+                        <SelectValue placeholder={t('menu')} />
+                      </SelectTrigger>
+                      <SelectContent className="bg-slate-800 border-slate-600">
+                        <SelectItem value="uz" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                          UZ
+                        </SelectItem>
+                        <SelectItem value="ru" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                          RU
+                        </SelectItem>
+                        <SelectItem value="en" className="text-white hover:bg-slate-700 focus:bg-slate-700">
+                          EN
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                   {navItems.map(({ path, label }) => (
                     <Link
                       key={path}
@@ -98,7 +157,7 @@ export default function Layout({ children }: LayoutProps) {
                     onClick={() => setMobileOpen(false)}
                     className="blurry-amber-btn mt-6 py-3 px-4 text-center text-sm uppercase tracking-wider text-white"
                   >
-                    Member Portal
+                    {t('register')}
                   </Link>
                 </nav>
               </SheetContent>

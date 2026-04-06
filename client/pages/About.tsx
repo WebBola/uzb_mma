@@ -92,28 +92,28 @@ export default function About() {
           <div className="space-y-8">
             <div className="glass p-6 border border-[#1a1a1a] border-l-2 border-l-electric-blue">
               <h3 className="text-lg font-bold text-white mb-2">
-                Founded in 2015
+                Tashkil etilishi (2015):
               </h3>
               <p className="text-gray-400">
-                The Uzbekistan MMA, Pankration, and Grappling Association was established to unify and elevate combat sports across the nation. Starting with just regional tournaments, we've grown into a nationally recognized federation.
+                O'zbekiston MMA, Pankration va Grappling assotsiatsiyasi 2015-yilda mamlakatda yakkakurash sport turlarini tizimlashtirish maqsadida tashkil etilgan. Ilk qadamlar mintaqaviy turnirlardan boshlanib, sportchilarning professional o'sishi uchun poydevor yaratildi.
               </p>
             </div>
 
             <div className="glass p-6 border border-[#1a1a1a] border-l-2 border-l-electric-blue">
               <h3 className="text-lg font-bold text-white mb-2">
-                Growth & Expansion (2017-2020)
+                Rivojlanish va Islohotlar:
               </h3>
               <p className="text-gray-400">
-                We expanded from MMA to include Pankration and Grappling disciplines. Regional offices were established in Samarkand, Bukhara, and Fergana, bringing professional competition to athletes nationwide.
+                Assotsiatsiya faoliyati davomida tarkibiy islohotlar amalga oshirildi. O'zbekiston aralash jang san'atlari (MMA) assotsiatsiyasi tashkil etilgandan so'ng, sportning ushbu turi yangi bosqichga chiqdi va xalqaro aloqalar mustahkamlandi.
               </p>
             </div>
 
             <div className="glass p-6 border border-[#1a1a1a] border-l-2 border-l-electric-blue">
               <h3 className="text-lg font-bold text-white mb-2">
-                International Recognition (2021-Present)
+                Hozirgi Davr va Rahbariyat:
               </h3>
               <p className="text-gray-400">
-                Today, our athletes compete at international levels, our standards align with global organizations, and we continue to innovate in athlete development, fan engagement, and safety protocols.
+                Bugungi kunda assotsiatsiyaga Otabek Umarov rahbarlik qilmoqda. Uning boshchiligida O'zbekiston MMA olami dunyoda o'z o'rniga ega bo'ldi, xalqaro IMMAF tashkiloti bilan hamkorlik o'rnatildi va mahalliy sportchilar jahon arenalarida yuqori natijalarni qayd etishmoqda.
               </p>
             </div>
           </div>

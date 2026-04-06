@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "calendar": "Jang taqvimi",
+    "rankings": "Reytinglar",
+    "athletes": "Sportchilar",
+    "news": "Yangiliklar",
+    "media": "Media",
+    "about": "Biz haqimizda"
+  },
+  "register": "A'zo portali",
+  "menu": "Menyuni ochish",
+  "home": {
+    "title": "O'zbekiston MMA Federatsiyasi",
+    "subtitle": "Pankration. Grappling. Jang mahorati.",
+    "nextEvent": "Keyingi tadbir",
+    "championshipSeries": "Chempionat seriyasi 2024",
+    "tashkentArena": "Toshkent Grand Arena",
+    "viewEvents": "Barcha tadbirlarni ko'rish",
+    "getTickets": "Chipta olish",
+    "topKings": "Eng yaxshi P4P qirollar",
+    "eliteAthletes": "Reytingda hukmronlik qiluvchi elita sportchilar",
+    "mma": "MMA",
+    "pankration": "Pankration",
+    "grappling": "Grappling",
+    "record": "Rekord",
+    "trendingUp": "Ko'tarilmoqda",
+    "trendingDown": "Tushmoqda",
+    "viewProfile": "Profilni ko'rish",
+    "fullRankings": "To'liq reytinglarni ko'rish",
+    "latestUpdates": "So'nggi yangiliklar",
+    "allNews": "Barcha yangiliklar",
+    "readMore": "Batafsil o'qish",
+    "readyToJoin": "Qo'shilishga tayyormisiz?",
+    "registerText": "Sportchi, klub yoki rasmiy sifatida ro'yxatdan o'ting va O'zbekiston MMA ekotizimida qatnashing",
+    "startRegistration": "Ro'yxatdan o'tishni boshlash"
+  }
+}
