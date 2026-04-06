@@ -65,13 +65,40 @@
     text-size-adjust: 100%;
   }
 
+  html,
+  body,
+  #root,
+  #root > div {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: hsl(var(--background));
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply text-foreground font-sans antialiased;
     font-family: "Inter", sans-serif;
+    background: transparent;
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
     background-image:
-      radial-gradient(circle at 14% 10%, rgba(255, 159, 0, 0.14), transparent 35%),
-      radial-gradient(circle at 82% 12%, rgba(255, 107, 0, 0.11), transparent 32%),
-      linear-gradient(180deg, hsl(235 7% 6%) 0%, hsl(var(--background)) 40%, hsl(230 9% 5%) 100%);
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.72) 0%,
+        rgba(0, 0, 0, 0.62) 45%,
+        rgba(0, 0, 0, 0.78) 100%
+      ),
+      url("/images/mma-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
     background-attachment: fixed;
   }
 
@@ -276,6 +303,7 @@
   }
   /* Normalize legacy hard-coded black utility classes to the new palette. */
   .bg-black {
-    background-color: hsl(var(--background)) !important;
+    background-color: hsl(var(--background) / 0.72) !important;
+    backdrop-filter: blur(10px);
   }
 }

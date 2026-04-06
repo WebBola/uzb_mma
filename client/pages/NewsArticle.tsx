@@ -24,7 +24,7 @@ export default function NewsArticlePage() {
             <ArrowLeft className="h-4 w-4" />
             Back to News
           </Link>
-          <div className="mb-4 inline-block rounded px-2 py-1 text-xs font-semibold uppercase text-electric-blue ring-1 ring-electric-blue/40">
+          <div className="mb-4 ml-2 inline-block rounded px-2 py-1 text-xs font-semibold uppercase text-electric-blue ring-1 ring-electric-blue/40">
             {article.category}
           </div>
           <h1 className="text-2xl font-bold text-white sm:text-3xl md:text-4xl">
@@ -50,18 +50,20 @@ export default function NewsArticlePage() {
               {article.imageLabel}
             </span>
           </div>
-          <div className="space-y-5 text-sm leading-relaxed text-gray-300 sm:text-base">
-            {paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-          <div className="mt-12 border-t separator-line pt-8 text-center">
-            <Link
-              to="/register"
-              className="inline-flex items-center justify-center rounded-md border border-electric-blue px-6 py-3 text-sm font-semibold text-electric-blue transition-colors hover:bg-electric-blue hover:text-black"
-            >
-              Member Portal — official updates & licensing
-            </Link>
+          <div className="flex flex-col gap-10">
+            <div className="space-y-5 text-sm leading-relaxed text-gray-300 sm:text-base">
+              {paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
+            </div>
+            <div className="border-t separator-line pt-8 text-center">
+              <Link
+                to="/register"
+                className="inline-flex w-full items-center justify-center rounded-md border border-electric-blue px-6 py-3 text-sm font-semibold text-electric-blue transition-colors hover:bg-electric-blue hover:text-black sm:w-auto"
+              >
+                Member Portal — official updates & licensing
+              </Link>
+            </div>
           </div>
         </div>
       </section>

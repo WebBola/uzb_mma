@@ -26,8 +26,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* Asosiy Wrapper qo'shdik: bg-background klassi bilan */}
-      <div className="bg-background min-h-screen text-foreground selection:bg-accent/30">
+      <div className="min-h-screen bg-transparent text-foreground selection:bg-accent/30">
         <BrowserRouter>
           <Layout>
             <Routes>

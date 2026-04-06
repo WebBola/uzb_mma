@@ -168,8 +168,8 @@ export default function Home() {
     <div className="page-transition">
       {/* Hero Section */}
       <section className="relative min-h-[100dvh] h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1566767608530-56f8f8f4f7b2?auto=format&fit=crop&w=1800&q=80')] bg-cover bg-center grayscale contrast-125" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-[#0a0a0b]/70 to-[#0a0a0b]" />
+        <div className="absolute inset-0 bg-[url('/images/mma-bg.png')] bg-cover bg-center grayscale contrast-125" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-[#0a0a0b]/50 to-[#0a0a0b]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#ff9f00]/8 via-transparent to-[#ff6b00]/10" />
         <div className="grain-layer" />
 
