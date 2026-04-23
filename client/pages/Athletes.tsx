@@ -169,9 +169,9 @@ export default function Athletes() {
   return (
     <div className="page-transition">
       {/* Header */}
-      <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 bg-black border-b separator-line">
+      <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-28 bg-black border-b separator-line">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6">
             Athletes Database
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">

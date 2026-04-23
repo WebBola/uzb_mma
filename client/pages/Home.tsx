@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 import {
   TrendingUp,
   TrendingDown,
@@ -22,7 +21,6 @@ interface CountdownTime {
 }
 
 export default function Home() {
-  const { t } = useTranslation();
   const [p4pDiscipline, setP4pDiscipline] = useState<Discipline>("MMA");
 
   const [countdown, setCountdown] = useState<CountdownTime>({
@@ -159,9 +157,9 @@ export default function Home() {
     label: string;
     Icon: typeof Swords;
   }[] = [
-    { key: "MMA", label: t('home.mma'), Icon: Swords },
-    { key: "Pankration", label: t('home.pankration'), Icon: Shield },
-    { key: "Grappling", label: t('home.grappling'), Icon: Grip },
+    { key: "MMA", label: "MMA", Icon: Swords },
+    { key: "Pankration", label: "Pankration", Icon: Shield },
+    { key: "Grappling", label: "Grappling", Icon: Grip },
   ];
 
   const p4pRankings = p4pRankingsAll.filter((a) => a.discipline === p4pDiscipline);
@@ -182,8 +180,7 @@ export default function Home() {
         {/* Hero Content */}
         <div className="relative z-10 text-center max-w-6xl mx-auto">
           <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-extrabold mb-4 sm:mb-6 tracking-tight uppercase px-1">
-            <span className="text-white">Uzbekistan</span>
-            <br />
+            <span className="text-white">Uzbekistan </span>
             <span className="amber-heading">MMA Federation</span>
           </h1>
           <p className="text-xs sm:text-base md:text-xl lg:text-2xl text-gray-300 font-light tracking-[0.12em] sm:tracking-[0.2em] uppercase px-1">
@@ -254,10 +251,10 @@ export default function Home() {
                 to="/calendar"
                 className="flex-1 px-6 py-3 bg-gradient-to-r from-[#ff6b00] to-[#ffcd59] text-black font-semibold action-pulse hover:brightness-110 transition-all text-center"
               >
-                {t('home.viewEvents')}
+                View All Events
               </Link>
               <button className="flex-1 px-6 py-3 border border-electric-blue/70 text-electric-blue font-semibold hover:bg-electric-blue hover:text-black transition-colors">
-                {t('home.getTickets')}
+                Get Tickets
               </button>
             </div>
           </div>
@@ -269,10 +266,10 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="mb-10 sm:mb-16 text-center">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold amber-heading mb-4 sm:mb-8 uppercase px-2">
-              {t('home.topKings')}
+              Top P4P Kings
             </h2>
             <p className="text-sm sm:text-base text-gray-600 px-2">
-              {t('home.eliteAthletes')}
+              Elite athletes dominating the rankings
             </p>
           </div>
 
@@ -327,7 +324,7 @@ export default function Home() {
 
                 {/* Record */}
                 <div className="bg-black bg-opacity-50 px-4 py-2 rounded mb-4 text-center">
-                  <p className="text-sm text-gray-600">{t('home.record')}</p>
+                  <p className="text-sm text-gray-600">Record</p>
                   <p className="text-electric-blue font-mono font-semibold">
                     {athlete.record}
                   </p>
@@ -338,19 +335,19 @@ export default function Home() {
                   {athlete.trend === "up" ? (
                     <>
                       <TrendingUp className="w-4 h-4 text-green-400" />
-                      <span className="text-sm text-green-400">{t('home.trendingUp')}</span>
+                      <span className="text-sm text-green-400">Trending Up</span>
                     </>
                   ) : (
                     <>
                       <TrendingDown className="w-4 h-4 text-red-400" />
-                      <span className="text-sm text-red-400">{t('home.trendingDown')}</span>
+                      <span className="text-sm text-red-400">Trending Down</span>
                     </>
                   )}
                 </div>
 
                 {/* Hover Effect */}
                 <div className="mt-4 flex items-center justify-center space-x-2 text-electric-blue opacity-0 group-hover:opacity-100 transition-opacity">
-                  <span className="text-sm font-semibold">{t('home.viewProfile')}</span>
+                  <span className="text-sm font-semibold">View Profile</span>
                 </div>
               </Link>
             ))}
@@ -362,7 +359,7 @@ export default function Home() {
               to="/rankings"
               className="inline-flex items-center space-x-2 px-8 py-3 border border-electric-blue text-electric-blue font-semibold hover:bg-electric-blue hover:text-black transition-colors"
             >
-              <span>{t('home.fullRankings')}</span>
+              <span>View Full Rankings</span>
               <span>→</span>
             </Link>
           </div>
@@ -374,13 +371,13 @@ export default function Home() {
         <div className="max-w-5xl mx-auto w-full min-w-0">
           <div className="mb-8 flex flex-col gap-4 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-              {t('home.latestUpdates')}
+              Latest Updates
             </h2>
             <Link
               to="/news"
               className="text-sm font-semibold text-electric-blue hover:underline"
             >
-              {t('home.allNews')} →
+              All news →
             </Link>
           </div>
 
@@ -403,7 +400,7 @@ export default function Home() {
                   </h3>
                   <p className="mb-4 line-clamp-3 text-sm text-gray-400">{article.excerpt}</p>
                   <span className="inline-flex items-center text-sm font-semibold text-electric-blue transition-transform group-hover:translate-x-1">
-                    {t('home.readMore')} →
+                    Read more →
                   </span>
                 </div>
               </Link>
@@ -416,16 +413,16 @@ export default function Home() {
       <section className="py-[120px] px-6 bg-black border-t separator-line">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold amber-heading mb-6 uppercase">
-            {t('home.readyToJoin')}
+            Ready to Join?
           </h2>
           <p className="text-gray-600 mb-8 text-lg">
-            {t('home.registerText')}
+            Register as an athlete, club, or official to participate in the Uzbekistan MMA ecosystem
           </p>
           <Link
             to="/register"
             className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-gradient-to-r from-[#ff6b00] via-[#ff9f00] to-[#ffcd59] text-black font-bold text-sm sm:text-base md:text-lg action-pulse hover:brightness-110 transition-all"
           >
-            {t('home.startRegistration')}
+            Start Registration
           </Link>
         </div>
       </section>

@@ -310,9 +310,9 @@ export default function Rankings() {
   return (
     <div className="page-transition">
       {/* Header */}
-      <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 bg-black border-b separator-line">
+      <section className="py-12 px-4 sm:py-16 sm:px-6 md:py-20 lg:py-28 bg-black border-b separator-line">
         <div className="max-w-5xl mx-auto">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6">
             Official Rankings
           </h1>
           <p className="text-sm sm:text-base md:text-lg text-gray-400 leading-relaxed">
@@ -380,9 +380,11 @@ export default function Rankings() {
                         className="border-b separator-line hover:bg-[#0a0a0a] transition-colors cursor-pointer group"
                       >
                         <td className="px-3 sm:px-6 py-3 sm:py-4">
-                          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-electric-blue text-black flex items-center justify-center text-sm sm:text-base font-bold">
-                            {athlete.rank}
-                          </div>
+                          <Link to={`/athlete/${athlete.id}`} className="flex items-center justify-center">
+                            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-electric-blue text-black flex items-center justify-center text-sm sm:text-base font-bold">
+                              {athlete.rank}
+                            </div>
+                          </Link>
                         </td>
                         <td className="px-3 sm:px-6 py-3 sm:py-4">
                           <div className="flex items-center space-x-2 sm:space-x-4">
@@ -390,9 +392,12 @@ export default function Rankings() {
                               {athlete.photo}
                             </div>
                             <div className="min-w-0">
-                              <p className="text-white font-semibold text-sm sm:text-base truncate">
+                              <Link
+                                to={`/athlete/${athlete.id}`}
+                                className="text-white font-semibold text-sm sm:text-base truncate hover:text-electric-blue transition-colors"
+                              >
                                 {athlete.name}
-                              </p>
+                              </Link>
                             </div>
                           </div>
                         </td>
